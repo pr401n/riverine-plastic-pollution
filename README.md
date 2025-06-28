@@ -37,15 +37,17 @@ Each row represents a country or river basin, with the following features:
 | `MPW (metric tons year -1)` | Mismanaged plastic waste               |
 | `Ratio Me/MPW`              | Emission-to-waste ratio                |
 
+📁 **Dataset Link**: [Download CSV on Google Drive](https://drive.google.com/file/d/1zIk9JOdJEu9YF7Xuv2C8f2Q8ySfG3nHd/view?usp=drive_link)
+
 ---
 
 ## ⚙️ Tools & Technologies
 
-- Python
+- Python (3.x)
 - [Scikit-learn](https://scikit-learn.org/)
 - Pandas & NumPy
 - Matplotlib & Seaborn (for visualization)
-- Google Colab (or Jupyter Notebook)
+- Google Colab or Jupyter Notebook
 
 ---
 
@@ -57,26 +59,18 @@ Each row represents a country or river basin, with the following features:
 - Dropped rows with missing values
 
 ### 2. Feature Engineering
-- Created target column `plastic_contribution` using a threshold on `M[E]`
-- Dropped `M[E]` and non-predictive columns from training features
+- Created the target column `plastic_contribution` using a threshold on `M[E]`
+- Dropped `M[E]` and non-predictive columns (`Country or Administrative area`) from training features
 
 ### 3. Model Training
-Used **Random Forest Classifier** due to its:
-- Robustness to non-linearity
-- No need for scaling
-- Built-in feature importance
+Used **Random Forest Classifier** (`RandomForestClassifier`) due to its:
+- Robustness to non-linear relationships
+- No need for feature scaling
+- Built-in support for feature importance visualization
+- Strong performance on tabular, structured datasets
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
+
 model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
-```
-
-
-📚 References
-The Ocean Cleanup: 1000 Rivers Report
-
-Science Advances, 2021 Publication
-
-
-
