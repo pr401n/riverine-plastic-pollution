@@ -70,3 +70,13 @@ Used **Random Forest Classifier** due to its:
 from sklearn.ensemble import RandomForestClassifier
 model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
+```
+
+
+📚 References
+The Ocean Cleanup: 1000 Rivers Report
+
+Science Advances, 2021 Publication
+
+
+
